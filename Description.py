@@ -44,15 +44,16 @@ from sklearn.linear_model import LogisticRegression as LR
 
 iris = datasets.load_iris() # Exemple dataset 
 data, target = datasets.load_iris(return_X_y=True) # Import sample variable and target.
+print(f'Sample Data:\n{data[:10]}\n\nTarget:\n{target[:10]}')
 
 training_sample,training_target,test_sample,test_target = ptD.partData(data,target,0.30) # Partitioning of data
 
-print("Training data:\n")
-print(training_sample)
+print("\n\nTraining data:\n")
+print(training_sample.head)
 print("\ntarget data of training:\n")
 print(training_target)
-print("\nTest teste:\n")
-print(test_sample)
+print("\nTest data:\n")
+print(test_sample.head)
 print("\nTeste target data:\n")
 print(test_target)
 
