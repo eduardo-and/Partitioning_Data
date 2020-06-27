@@ -42,22 +42,22 @@ from sklearn.linear_model import LogisticRegression as LR
 # * Initially, this function is done for classification data, as the data is divided through class balancing.   
 
 
-iris = datasets.load_iris()
-data, target = datasets.load_iris(return_X_y=True)
+iris = datasets.load_iris() # Exemple dataset 
+data, target = datasets.load_iris(return_X_y=True) # Import sample variable and target.
 
-training_sample,training_target,test_sample,test_target = ptD.partData(data,target,0.30)
+training_sample,training_target,test_sample,test_target = ptD.partData(data,target,0.30) # Partitioning of data
 
-print("Dados de treino:\n")
+print("Training data:\n")
 print(training_sample)
-print("\ntarget de treino:\n")
+print("\ntarget data of training:\n")
 print(training_target)
-print("\nDados de teste:\n")
+print("\nTest teste:\n")
 print(test_sample)
-print("\ntarget de teste:\n")
+print("\nTeste target data:\n")
 print(test_target)
 
 
-clf = LR(random_state=0,max_iter=500).fit(training_sample,training_target) # Training the algorithm
+clf = LR(random_state=0,max_iter=500).fit(training_sample,training_target) # Exemple classification algorithm
 
-print("Logistic Regression acuracy:")
+print("Acuracy:") 
 print(clf.score(test_sample,test_target))
